@@ -1,0 +1,319 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="FinalP.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>HRMS Admin</title>
+    <link href="Resources/vendors/mdi/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="Resources/vendors/base/vendor.bundle.base.css" rel="stylesheet" />
+    <link href="Resources/css/style.css" rel="stylesheet" />
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <style>
+        .header {
+            margin: auto;
+            background-color: #f1f1f1;
+            padding: 10px;
+            width: 60%;
+            text-align: center;
+        }
+
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+            font: bold 12px;
+        }
+
+        .center1 {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            font: bold 12px;
+        }
+
+        .right {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="navbar-brand-wrapper d-flex justify-content-center">
+                <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+                    <a class="navbar-brand brand-logo" href="DashBoard.aspx">Logo Company</a>
+
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-sort-variant"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Recruitment</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/RecHome.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Home</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/VacancyDetails.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Vacancy Announcements</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/VacancyReceived.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Applications Received</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/ShortList.aspx">
+                                        <i class="mdi mdi-minus-circle menu-icon"></i>
+                                        <span class="menu-title">ShortList</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/WrittenTest.aspx">
+                                        <i class="mdi mdi-pen menu-icon"></i>
+                                        <span class="menu-title">Calls for written Test</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/Interview.aspx">
+                                        <i class="mdi mdi-phone-in-talk menu-icon"></i>
+                                        <span class="menu-title">Calls for Interview</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/Status.aspx">
+                                        <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                                        <span class="menu-title">Status</span>
+                                    </a>
+                                </li>
+                                <%--<li class="nav-item">
+                                    <a class="nav-link" href="Recruitment/Contract.aspx">
+                                        <i class="mdi mdi-marker menu-icon"></i>
+                                        <span class="menu-title">Contract</span>
+                                    </a>
+                                </li>--%>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Attendance</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/AttHome.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Home</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/Attendance.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Attendance</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/AttendanceReport.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Attendance Report</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/AssignHoliday.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Add Holiday</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/Leave.aspx">
+                                        <i class="mdi mdi-pen menu-icon"></i>
+                                        <span class="menu-title">Leave</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Attendance/Complain.aspx">
+                                        <i class="mdi mdi-phone-in-talk menu-icon"></i>
+                                        <span class="menu-title">Complain</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basi" aria-expanded="false" aria-controls="ui-basi">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Payroll</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basi">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PayRoll/PRHome.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Home</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PayRoll/AddClass.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Add Class</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PayRoll/EmpDetails.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Employee Details</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PayRoll/GenerateSalary.aspx">
+                                        <i class="mdi mdi-pen menu-icon"></i>
+                                        <span class="menu-title">Salary</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PayRoll/SalaryReport.aspx">
+                                        <i class="mdi mdi-phone-in-talk menu-icon"></i>
+                                        <span class="menu-title">Salary Report</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PayRoll/YearReport.aspx">
+                                        <i class="mdi mdi-phone-in-talk menu-icon"></i>
+                                        <span class="menu-title">Year-wise Report</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-bas" aria-expanded="false" aria-controls="ui-bas">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">MasterUser</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-bas">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/MasterHome.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Home</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/EditEmp.aspx">
+                                        <i class="mdi mdi-account-group menu-icon"></i>
+                                        <span class="menu-title">Edit Employee</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/EditDept.aspx">
+                                        <i class="mdi mdi-file-import menu-icon"></i>
+                                        <span class="menu-title">Edit Department</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="MasterUser/EditPost.aspx">
+                                        <i class="mdi mdi-pen menu-icon"></i>
+                                        <span class="menu-title">Edit Post</span>
+                                    </a>
+                                </li>                                                               
+                            </ul>
+                        </div>
+                       
+                    </li>
+
+                    <%--<li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="mdi mdi-marker menu-icon"></i>
+                            <span class="menu-title">Training</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="EditPostDetails.aspx">
+                            <i class="mdi mdi-marker menu-icon"></i>
+                            <span class="menu-title">EditPost</span>
+                        </a>
+                    </li>--%>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+
+                        <span class="center1">
+                            <script>
+                                var today = new Date();
+                                var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+                                document.write(date);
+
+                            </script>
+                            <br />
+                            <b>ABC HRM System</b><br />
+                            <b>Address</b><br />
+                            <b>Contact</b>
+                        </span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+    <script src="Resources/vendors/base/vendor.bundle.base.js"></script>
+    <script src="Resources/vendors/chart.js/Chart.min.js"></script>
+    <script src="Resources/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="Resources/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="Resources/js/off-canvas.js"></script>
+    <script src="Resources/js/hoverable-collapse.js"></script>
+    <script src="Resources/js/template.js"></script>
+    <script src="Resources/js/dashboard.js"></script>
+    <script src="Resources/js/data-table.js"></script>
+    <script src="Resources/js/jquery.dataTables.js"></script>
+    <script src="Resources/js/dataTables.bootstrap4.js"></script>
+</body>
+</html>
